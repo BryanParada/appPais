@@ -10,6 +10,7 @@ import { Country } from '../../interfaces/pais.interface';
 })
 export class PorPaisComponent {
 
+  
   termino : string = 'Chile';
   hayError: boolean = false;
   paises  : Country[] = [];

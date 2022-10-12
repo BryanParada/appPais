@@ -6,13 +6,14 @@
     <div class="col">
         <app-pais-input 
             (onEnter)="buscar( $event )"
-            (onDebounce)="sugerencias($event)"></app-pais-input>
+            (onDebounce)="sugerencias($event)"
+            placeholder="Buscar País..."></app-pais-input>
     </div>
 </div>
 
 <hr>
 <div *ngIf="hayError" class="alert alert-danger">
-    No se encontró nada con el término {{termino}}
+    No se encontraron resultados con el término {{termino}}
 </div>
  
     <div *ngIf="paises.length > 0" class="row">
