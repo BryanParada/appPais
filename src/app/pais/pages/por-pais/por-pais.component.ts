@@ -14,22 +14,41 @@ export class PorPaisComponent {
 
   constructor( private PaisService: PaisService) { }
 
-  buscar(){
+  buscarDeprecated(){
     this.hayError = false;
     console.log(this.termino);
 
     this.PaisService.buscarPais(this.termino)
-    .subscribe( resp => {
-      console.log(resp);
+    .subscribe( paises => {
+      console.log(paises);
       
     }, (err) => {
       this.hayError = true;
       console.log("Error!");
       console.info(err);
-      
-      
-    });
-    
+             
+    }); 
  }
+
+ buscar(){
+  this.hayError = false;
+  console.log(this.termino);
+  
+  this.PaisService.buscarPais(this.termino)
+  .subscribe({
+    next: (paises)=>{
+      console.log(paises); 
+    },
+    error: (err)=>{
+      this.hayError = true;
+      console.log("Error!");
+      console.info(err);
+    }
+    
+  });
+
+ }
+
+
 
 }
