@@ -32,9 +32,9 @@ export class PorPaisComponent {
     }); 
  }
 
- buscar(){
+ buscar( termino: string){
   this.hayError = false;
-  console.log(this.termino);
+  this.termino = termino; 
 
   this.PaisService.buscarPais(this.termino)
   .subscribe({
