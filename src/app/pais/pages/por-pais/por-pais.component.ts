@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component} from '@angular/core';
 
 @Component({
   selector: 'app-por-pais',
@@ -6,11 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styles: [
   ]
 })
-export class PorPaisComponent implements OnInit {
+export class PorPaisComponent {
+
+  termino: string = 'hola mundo';
 
   constructor() { }
 
-  ngOnInit(): void {
-  }
+  buscar(){
+    console.log(this.termino);
+    
+ }
 
 }
