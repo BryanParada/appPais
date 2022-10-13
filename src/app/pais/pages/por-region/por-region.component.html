@@ -12,25 +12,27 @@
     'btn-outline-primary': regionActiva !== region
 
  }" -->
-
-<div class="row">
-    <div class="col">
-        <button *ngFor="let region of regiones" 
-                 [class]="getClaseCSS(region) "
-
-                 (click)="activarRegion(region)">
-            {{region}}
-        </button>
-    </div>
-</div>
-
-<hr>
-<div *ngIf="hayError" class="alert alert-danger">
-    No se encontraron resultados con el término {{termino}}
-</div>
- 
-    <div *ngIf="paises.length > 0" class="row">
+ <div  class="animate__animated animate__fadeIn">
+    <div class="row">
         <div class="col">
-           <app-pais-tabla [paises]="paises"></app-pais-tabla>
+            <button *ngFor="let region of regiones" 
+                    [class]="getClaseCSS(region) "
+
+                    (click)="activarRegion(region)">
+                {{region}}
+            </button>
         </div>
     </div>
+
+    <hr>
+    <div *ngIf="hayError" class="alert alert-danger">
+        No se encontraron resultados con el término {{termino}}
+    </div>
+    
+        <div *ngIf="paises.length > 0" class="row">
+            <div class="col">
+            <app-pais-tabla [paises]="paises"></app-pais-tabla>
+            </div>
+        </div>
+
+</div>
