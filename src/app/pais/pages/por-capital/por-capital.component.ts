@@ -11,7 +11,7 @@ import { Country } from '../../interfaces/pais.interface';
 export class PorCapitalComponent {
 
  
-  termino  : string = 'Chile';
+  termino  : string = '';
   hayError : boolean = false;
   paises   : Country[] = [];
 
