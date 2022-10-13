@@ -1,7 +1,7 @@
 <h3>Buscar por Región <small>{{ regionActiva | titlecase }} </small></h3>
 <hr>
 
-<h5>Seleccione la region</h5>
+<h5>Seleccione la región</h5>
 
 <!-- opcion 1 -->
 <!-- [class.btn-primary]="region === regionActiva" -->
@@ -23,3 +23,14 @@
         </button>
     </div>
 </div>
+
+<hr>
+<div *ngIf="hayError" class="alert alert-danger">
+    No se encontraron resultados con el término {{termino}}
+</div>
+ 
+    <div *ngIf="paises.length > 0" class="row">
+        <div class="col">
+           <app-pais-tabla [paises]="paises"></app-pais-tabla>
+        </div>
+    </div>
